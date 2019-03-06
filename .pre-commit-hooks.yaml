@@ -1,0 +1,6 @@
+- id: cpplint
+  name: Lint C++ files
+  description: Runs cpplint
+  entry: pre_commit_hooks/cpplint.sh
+  language: script
+  files: \.(h|cpp)$
