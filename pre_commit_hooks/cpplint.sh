@@ -10,7 +10,7 @@ DEBUG=${DEBUG:=0}
 echo 'Begin cpplint hook'
 
 if ! command -v cpplint &>/dev/null; then
-  >&2 echo 'cpplint command not found. See https://github.com/cpplint/cpplint for installation instructions.'
+  echo 'cpplint command not found. See https://github.com/cpplint/cpplint for installation instructions, or try installing via pip.' 1>&2
   exit 1
 fi
 
