@@ -1,18 +1,13 @@
 #!/usr/bin/env bash
-
-set -o errexit
-set -o pipefail
-set -o nounset
+set -euo pipefail
 
 DEBUG=${DEBUG:=0}
-[[ $DEBUG -eq 1 ]] && set -o xtrace
-
-exec < /dev/tty
+[ "$DEBUG" -eq 1 ] && set -x
 
 echo 'Begin cpplint hook'
 
 if ! command -v cpplint &>/dev/null; then
-  >&2 echo 'cpplint command not found. See https://github.com/cpplint/cpplint for installation instructions.' 
+  echo 'cpplint command not found. See https://github.com/cpplint/cpplint for installation instructions, or try installing via pip.' 1>&2
   exit 1
 fi
 
