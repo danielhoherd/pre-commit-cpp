@@ -2,7 +2,7 @@
 set -euo pipefail
 
 DEBUG=${DEBUG:=0}
-[[ $DEBUG -eq 1 ]] && set -o xtrace
+[ "$DEBUG" -eq 1 ] && set -x
 
 echo 'Begin cppcheck'
 
