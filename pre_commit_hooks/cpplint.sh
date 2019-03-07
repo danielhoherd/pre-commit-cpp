@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-
-set -o errexit
-set -o pipefail
-set -o nounset
+set -euo pipefail
 
 DEBUG=${DEBUG:=0}
 [[ $DEBUG -eq 1 ]] && set -o xtrace
